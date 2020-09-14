@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
 import { DogsService } from '../dogs/dogs.service'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-dog',
@@ -12,7 +13,7 @@ export class DogComponent implements OnInit {
   dog: Object;
 
   private _dogsService;
-  constructor(private route: ActivatedRoute, dogsService: DogsService) { 
+  constructor(private route: ActivatedRoute, dogsService: DogsService, private router: Router) { 
     this._dogsService = dogsService
   }
 
@@ -24,6 +25,11 @@ export class DogComponent implements OnInit {
         console.log(dog)
       }
     })
+  }
+
+  onClick(): void {
+    console.log('clicked')
+    this.router.navigate(['/dogs'])
   }
 
 }

@@ -1,3 +1,7 @@
 .clickable {
     cursor: pointer;
 }
+
+.white-text {
+    color: white;
+}

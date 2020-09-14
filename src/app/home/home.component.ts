@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this._dogsService.getDogs().subscribe({
       next: (dogs) => {
-        // console.log(dogs)
+        // console.log(dogs.slice(-4))
         this.dogs = dogs
       }
     })

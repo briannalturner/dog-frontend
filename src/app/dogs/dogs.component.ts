@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DogsService } from './dogs.service'
 
 @Component({
   selector: 'app-dogs',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DogsComponent implements OnInit {
 
-  constructor() { }
+  dogs: Object[];
+
+  private _dogsService;
+  constructor(dogsService: DogsService) { 
+    this._dogsService = dogsService
+  }
 
   ngOnInit(): void {
+    this._dogsService.getDogs().subscribe({
+      next: dogs => {
+        this.dogs = dogs
+        console.log(dogs)
+      }
+    })
   }
 
 }
