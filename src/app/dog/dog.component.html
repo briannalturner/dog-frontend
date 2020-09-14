@@ -1,1 +1,25 @@
-<p>dog works!</p>
+<div class="container mt-2">
+    <div class="card" *ngIf='dog'>
+        <div class="card-header"><h1>{{dog.name}}</h1></div>
+        <div class="row card-body">
+            <div class="col">
+                <h4>Breed</h4>
+                <p>{{dog.breed}}</p>
+                <h4>Age</h4>
+                <p>{{dog.age}}</p>
+                <h4>Weight</h4>
+                <p>{{dog.weight}} lbs</p>
+                <h4>Eye Color</h4>
+                <p>{{dog.eyes}}</p>
+                <h4>Coat Color</h4>
+                <p>{{dog.coat}}</p>
+            </div>
+            <div class="col">
+                <img src={{dog.image}} style="max-width: inherit;" alt="">
+            </div>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-outline-dark"><i class="fa fa-chevron-left"></i> Back</button>
+        </div>
+    </div>
+</div>
